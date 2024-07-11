@@ -1,0 +1,49 @@
+
+
+--  AES  (Advanced Encryption Standard; Gelişmiş Şifreleme Standardı):
+elektronik verinin şifrelenmesi için sunulan bir standarttır. Amerikan hükûmeti tarafından kabul edilen AES,
+uluslararası alanda da defacto şifreleme (kripto) standardı olarak kullanılmaktadır. DES'in (Data Encryption Standard -
+Veri Şifreleme Standardı) yerini almıştır. AES ile tanımlanan şifreleme algoritması, hem şifreleme hem de şifreli metni
+çözmede kullanılan anahtarların birbiriyle ilişkili olduğu, simetrik-anahtarlı bir algoritmadır. AES için şifreleme ve
+şifre çözme anahtarları aynıdır.
+
+AES, simetrik bir şifreleme algoritması ve bir blok şifresidir. İlki, verileri şifrelemek ve şifresini çözmek için aynı
+anahtarı kullandığı anlamına gelir. Gönderici ve alıcı aynı gizli şifreleme anahtarını bilmeli ve kullanmalıdır.
+ Bu, AES'i, veri şifreleme ve şifre çözme için farklı anahtarların kullanıldığı asimetrik algoritmalardan farklı kılar .
+  Blok şifresi, AES'in bir mesajı daha küçük bloklara bölmesi ve bu blokları şifreleyerek düz metin mesajını şifreli
+  metin adı verilen anlaşılmaz bir biçime dönüştürmesi anlamına gelir .
+
+AES , verileri daha iyi korumak ve gizliliğini ve bütünlüğünü sağlamak için her biri birden fazla şifreleme turundan
+ geçen birden fazla şifreleme anahtarı kullanır . Tüm anahtar uzunlukları Gizli ve Gizli düzeydeki bilgileri korumak
+ için kullanılabilir. Genel olarak, AES-128 çoğu tüketici uygulaması için yeterli güvenlik ve kaba kuvvet saldırılarına
+  karşı koruma sağlar. Çok Gizli olarak sınıflandırılan bilgiler (örneğin, hükümet veya askeri bilgiler) daha fazla
+  işlem gücü gerektiren ve yürütülmesi daha uzun sürebilen 192 veya 256 bitlik anahtar uzunlukları tarafından sağlanan
+  daha güçlü güvenliği gerektirir.
+
+
+
+
+
+
+  AES şifrelemesi nasıl çalışır?
+  AES üç blok şifre veya kriptografik anahtar içerir:
+
+  AES-128, mesaj bloklarını şifrelemek ve şifresini çözmek için 128 bitlik bir anahtar uzunluğu kullanır.
+  AES-192, mesaj bloklarını şifrelemek ve şifresini çözmek için 192 bitlik bir anahtar uzunluğu kullanır.
+  AES-256, mesaj bloklarını şifrelemek ve şifresini çözmek için 256 bitlik bir anahtar uzunluğu kullanır.
+  Her şifre, sırasıyla 128, 192 ve 256 bitlik kriptografik anahtarlar kullanarak 128 bitlik bloklar halinde verileri
+  şifreler ve şifresini çözer. 128, 192 ve 256 bitlik anahtarlar sırasıyla 10, 12 ve 14 şifreleme turundan geçer.
+   Bir tur, düz metin girişinin son şifreli metin çıktısına dönüştürülmesi için değiştirilmesi, aktarılması ve
+   karıştırılması dahil olmak üzere çeşitli işlem adımlarından oluşur. Tur sayısı arttıkça, şifrelemeyi kırmak zorlaşır
+    ve orijinal bilgi daha güvenli hale gelir.
+
+  AES'de, veriler üzerinde çok sayıda dönüşüm gerçekleştirilir. İlk olarak, veriler bir diziye yerleştirilir,
+   ardından şifre dönüşümleri birden fazla şifreleme turunda tekrarlanır. İlk dönüşüm, bir ikame tablosu ve önceden
+   tanımlanmış bir şifre kullanılarak veri ikamesidir. İkinci dönüşümde, ilk satır hariç tüm veri satırları birer birer
+   kaydırılır. Üçüncü dönüşüm, Hill şifresini kullanarak sütunları karıştırır . Son dönüşüm, şifreleme anahtarının
+   farklı bir kısmı veya küçük bir bölümü kullanılarak her sütun veya veri bloğu üzerinde gerçekleştirilir. Daha uzun
+   anahtarların tamamlanması için daha fazla tur gerekir.
+
+  Şifre çözme sırasında, mesaj alıcısı şifrelemenin çeşitli katmanlarını kaldırmak ve şifreli metni tekrar düz metne
+  dönüştürmek için şifrenin bir kopyasını kullanır. Dönüştürme sonrasında, mesajın başka biri tarafından ele
+  geçirilmediğini veya okunmadığını bilerek mesajı okuyabilir.
