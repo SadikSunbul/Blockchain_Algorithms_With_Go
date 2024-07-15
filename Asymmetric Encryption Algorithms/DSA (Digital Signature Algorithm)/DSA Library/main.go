@@ -8,6 +8,11 @@ import (
 	"log"
 )
 
+/*
+DSA (Digital Signature Algorithm), öncelikle dijital imzalar oluşturmak ve doğrulamak için tasarlanmış bir algoritmadır.
+DSA, mesajları şifrelemek veya şifrelerini çözmek için kullanılmaz. DSA, mesajın bütünlüğünü ve kaynağını doğrulamak
+amacıyla kullanılır.
+*/
 func main() {
 	// DSA parametreleri oluştur
 	params := new(dsa.Parameters)
