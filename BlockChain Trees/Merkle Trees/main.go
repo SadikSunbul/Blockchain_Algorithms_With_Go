@@ -14,7 +14,7 @@ func main() {
 	node := merkletree.MerkleTreeCreate(stringArrToNodeArr(datas))
 
 	fmt.Println("Node read:")
-	node.ReatTree()
+	node.ReatTree("")
 }
 
 type Node struct {
@@ -76,11 +76,31 @@ func merkleTreeAdd(data1, data2 *Node) *Node {
 	return &Node{Left: data1, Right: data2, Data: hash(bytes.Join([][]byte{data1.Data[:], data2.Data[:]}, []byte{}))}
 }
 
-func (n *Node) ReatTree() {
+//func (n *Node) ReatTree() {
+//	if n == nil {
+//		return
+//	}
+//	fmt.Printf("%x-%s\n", n.Data[:], n.DataString)
+//	n.Left.ReatTree()
+//	n.Right.ReatTree()
+//}
+
+func (n *Node) ReatTree(prefix string) {
 	if n == nil {
 		return
 	}
-	fmt.Printf("%x-%s\n", n.Data[:], n.DataString)
-	n.Left.ReatTree()
-	n.Right.ReatTree()
+
+	isLeaf := n.Left == nil && n.Right == nil
+	if isLeaf {
+		fmt.Printf("%s%s%x-%s\033[0m\n", prefix, "\033[32m", n.Data[:], n.DataString)
+	} else {
+		fmt.Printf("%s%x-%s\n", prefix, n.Data[:], n.DataString)
+	}
+
+	if n.Left != nil {
+		n.Left.ReatTree(prefix + "│   ")
+	}
+	if n.Right != nil {
+		n.Right.ReatTree(prefix + "    ")
+	}
 }
