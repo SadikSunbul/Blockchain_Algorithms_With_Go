@@ -43,7 +43,7 @@ func KeyCreate() (p, q int) {
 }
 
 func Encrypt(p, q, message int) (int, int, error) {
-	n := p * q
+	n := p * q //aslında burada p ve q degerlerı verılmez sıfreleme ıcın n ve e degerı verılır ordan sıfreleme yapar p ve q degerı çözmek ıçın kullanılır
 	//totien degeri
 	phi := (p - 1) * (q - 1)
 	e := primeNumberAmongThem(phi)
